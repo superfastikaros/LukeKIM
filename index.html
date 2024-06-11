@@ -58,21 +58,59 @@
         <p>Hi! I'm [Luke KIM], and this is my personal website where I share my travel adventures, daily life, food experiences, and my favorite music.</p>
     </section>
 
-    <section class="instagram-feed">
-        <h2>Instagram Feed</h2>
-        <div class="grid-container">
-            <!-- Example of a grid item with an image -->
-            <div class="grid-item">
-                <img src="image1.jpg" alt="Travel Photo 1" style="width:100%;">
-                <p>Travel Photo 1 Description</p>
-            </div>
-            <div class="grid-item">
-                <img src="image2.jpg" alt="Food Photo 1" style="width:100%;">
-                <p>Food Photo 1 Description</p>
-            </div>
-            <!-- Add more grid items as needed -->
-        </div>
-    </section>
+   <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .grid-item {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Instagram Feed</h1>
+    <div class="grid-container" id="instagram-feed"></div>
+
+    <script>
+        const accessToken = 'kyo4347!';
+        const userId = 'superfast.ikaros.lukeskywalker';
+
+        fetch(`https://graph.instagram.com/${userId}/media?fields=id,caption,media_url&access_token=${accessToken}`)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('instagram-feed');
+                data.data.forEach(item => {
+                    const gridItem = document.createElement('div');
+                    gridItem.className = 'grid-item';
+                    gridItem.innerHTML = `
+                        <img src="${item.media_url}" alt="${item.caption}" style="width:100%;">
+                        <p>${item.caption}</p>
+                    `;
+                    container.appendChild(gridItem);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
 
     <section class="music">
         <h2>My Favorite Music</h2>
