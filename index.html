@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        section {
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+        .intro {
+            text-align: center;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .grid-item {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .music {
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Personal Homepage</h1>
+    </header>
+
+    <section class="intro">
+        <h2>About Me</h2>
+        <p>Hi! I'm [Your Name], and this is my personal website where I share my travel adventures, daily life, food experiences, and my favorite music.</p>
+    </section>
+
+    <section class="instagram-feed">
+        <h2>Instagram Feed</h2>
+        <div class="grid-container">
+            <!-- Example of a grid item with an image -->
+            <div class="grid-item">
+                <img src="image1.jpg" alt="Travel Photo 1" style="width:100%;">
+                <p>Travel Photo 1 Description</p>
+            </div>
+            <div class="grid-item">
+                <img src="image2.jpg" alt="Food Photo 1" style="width:100%;">
+                <p>Food Photo 1 Description</p>
+            </div>
+            <!-- Add more grid items as needed -->
+        </div>
+    </section>
+
+    <section class="music">
+        <h2>My Favorite Music</h2>
+        <p>Here are some of my favorite songs and albums:</p>
+        <ul>
+            <li>Song 1 by Artist 1</li>
+            <li>Song 2 by Artist 2</li>
+            <!-- Add more songs as needed -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>Contact me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>Follow me on social media:
+            <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>,
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+        </p>
+    </footer>
+</body>
+</html>
